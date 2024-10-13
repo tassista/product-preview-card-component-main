@@ -1,4 +1,26 @@
 
+@font-face {
+    font-display: swap; 
+    font-family: 'Fraunces';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./fonts/fraunces-v31-latin-700.woff2') format('woff2');
+  }
+@font-face {
+    font-display: swap; 
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./fonts/montserrat-v26-latin-500.woff2') format('woff2');
+  }
+@font-face {
+    font-display: swap; 
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./fonts/montserrat-v26-latin-700.woff2') format('woff2');
+  }
+
 *,
 *::before,
 *::after{
@@ -7,4 +29,22 @@
 }
 html{
     box-sizing: border-box;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    background: rgb(242, 235, 227);
+}
+img{
+    max-inline-size: 100%;
+    block-size: auto;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 500px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
 }
