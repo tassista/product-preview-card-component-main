@@ -20,7 +20,22 @@
     font-weight: 700;
     src: url('./fonts/montserrat-v26-latin-700.woff2') format('woff2');
   }
+:root{
+     /********* Colors ********/
 
+     /* Primary */
+    --Dark-cyan: hsl(158, 36%, 37%);
+    --Cream: hsl(30, 38%, 92%);
+     /* Neutral */
+    --Very-dark-blue: hsl(212, 21%, 14%);
+    --Dark-grayish-blue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%);
+
+    /******** typos ********/
+
+    --fs-p: clamp(.955rem, 0.7rem + 1vw  , 1.25rem);
+    --fs-h1: clamp(2.2rem, 1rem + 4vw, 3rem);
+}
 *,
 *::before,
 *::after{
@@ -29,22 +44,94 @@
 }
 html{
     box-sizing: border-box;
+    font-size: 14px;
 }
 body{
     font-family: 'Montserrat', sans-serif;
-    background: rgb(242, 235, 227);
+    background: var(--Cream);
+    display: grid;
+    place-content: center;
+    height: 100vh;
 }
 img{
     max-inline-size: 100%;
-    block-size: auto;
+    /* block-size: auto; */
 }
 .card{
     display: flex;
     flex-direction: column;
     width: 90%;
-    max-width: 500px;
+    max-width: 800px;
     margin: 2rem auto;
-    background: #fff;
+    background: var(--White);
     border-radius: 10px;
     overflow: hidden;
+}
+.card > *{
+    flex: 1;
+}
+.card__info{
+    padding: 2em;
+}
+.card__info > *:not(:first-child) {
+    margin-block-start: 1.2rem;
+}
+.card__subtitle{
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--Dark-grayish-blue);
+}
+.card__title{
+    font-family: 'Fraunces';
+    font-size: var(--fs-h1);
+    color: var(--Very-dark-blue);
+    line-height: 1.1;
+}
+.card__text{
+    font-size: var(--fs-p);
+    color: var(--Dark-grayish-blue);
+    line-height: 1.6;
+    font-weight: 500;
+}
+.card__price{
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
+.price{
+    color: var(--Dark-cyan);
+    font-family: 'Fraunces';
+    font-size: 2.2em;
+}
+.price__noDisc{
+    text-decoration: line-through;
+    color: var(--Dark-grayish-blue);
+}
+.btn{
+    background: var(--Dark-cyan);
+    display: inline-block;
+    width: 100%;
+    font-weight: 700;
+    font-size: var(--fs-p);
+    color: var(--White);
+    padding-block: 1rem;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+@media screen and (min-width:500px){
+    .card{
+        flex-direction: row;
+        margin: auto;
+    }
+    .card__img{
+        display: flex;
+    }
+    img{
+        object-fit: cover;        
+    }
+
 }
